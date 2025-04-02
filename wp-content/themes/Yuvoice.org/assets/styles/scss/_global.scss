@@ -3,7 +3,10 @@
 Stylesheet: Global Stylesheet
 
 *************************************************/
-
+#top-bar-menu {
+	max-width: 1250px;
+	margin: 0 auto;
+	padding: 0 1rem}
 /*********************
 POSTS & CONTENT STYLES
 *********************/
@@ -21,10 +24,11 @@ POSTS & CONTENT STYLES
 	color: #999;
 	time {}
 }
-
 // Entry content  
-.entry-content {
-	
+.entry-content,
+.inner-content {
+	max-width: 1250px !important;
+	margin: 0 auto !important;
 	img {
 		max-width: 100%;
 		height: auto;
@@ -442,4 +446,22 @@ body .gform_wrapper ul.gform_fields li.gfield.gform_validation_container {
     display: none !important;
     position: absolute !important;
     left: -9000px;
+}
+
+.yuvoice-logo {
+max-width: 50px;
+}
+.yuvoice-wordmark {
+	margin: 0 auto;
+	display: block;
+	padding: 1rem 0;
+}
+
+
+.editorial {
+	display: inline-block;
+	list-style: none;
+}
+.is-dropdown-submenu-item {
+	list-style: none;
 }
