@@ -1,0 +1,60 @@
+version: '3.8'
+
+services:
+  db:
+    image: mariadb:latest
+    platform: linux/arm64/v8
+    volumes:
+      - db_data:/var/lib/mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: "T4*7{6%i4d4AR1&"
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: Yuvoice_user
+      MYSQL_PASSWORD: "T4*7{6%i4d4AR1&"
+    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+<<<<<<< Updated upstream
+=======
+    healthcheck:
+      # test: >
+      #   bash -c "mysqladmin ping -h 127.0.0.1 -u root -p'T4*7{6%i4d4AR1&'"
+      # interval: 10s
+      # timeout: 5s
+      # retries: 5
+>>>>>>> Stashed changes
+
+  wordpress:
+    image: wordpress:latest
+    platform: linux/arm64/v8
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "8085:80"
+    restart: always
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_USER: Yuvoice_user
+      WORDPRESS_DB_PASSWORD: "T4*7{6%i4d4AR1&"
+      WORDPRESS_DB_NAME: wordpress
+    volumes:
+      - ./wp-content/themes:/var/www/html/wp-content/themes
+      - ./wp-content/uploads:/var/www/html/wp-content/uploads
+      - ./wp-content/plugins:/var/www/html/wp-content/plugins
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    platform: linux/amd64
+    depends_on:
+      - db
+    ports:
+      - "8084:80"
+    restart: always
+    environment:
+      PMA_HOST: db
+      PMA_USER: root
+      PMA_PASSWORD: "T4*7{6%i4d4AR1&"
+
+volumes:
+  db_data: {}
+z
