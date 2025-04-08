@@ -13,12 +13,22 @@ services:
       MYSQL_USER: Yuvoice_user
       MYSQL_PASSWORD: "T4*7{6%i4d4AR1&"
     command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+<<<<<<< Updated upstream
+=======
+    healthcheck:
+      # test: >
+      #   bash -c "mysqladmin ping -h 127.0.0.1 -u root -p'T4*7{6%i4d4AR1&'"
+      # interval: 10s
+      # timeout: 5s
+      # retries: 5
+>>>>>>> Stashed changes
 
   wordpress:
     image: wordpress:latest
     platform: linux/arm64/v8
     depends_on:
-      - db
+      db:
+        condition: service_healthy
     ports:
       - "8085:80"
     restart: always
@@ -47,3 +57,4 @@ services:
 
 volumes:
   db_data: {}
+z
