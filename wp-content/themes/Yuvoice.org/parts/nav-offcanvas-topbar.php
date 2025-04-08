@@ -17,7 +17,7 @@ wp_list_categories( array(
     'taxonomy'   => 'editorial',   // our custom taxonomy slug
     'title_li'   => '',            // remove default title <li>
     'show_count' => false,          // optionally show term post counts
-		'title_li' => 'Editorial Terms',
+		'title_li' => 'Editorial Stories',
 		'orderby' => 'name',
 		'order' => 'ASC',
 		'hide_empty' => false,
