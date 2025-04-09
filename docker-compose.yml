@@ -14,13 +14,19 @@ services:
       MYSQL_PASSWORD: "T4*7{6%i4d4AR1&"
     command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
     healthcheck:
       # test: >
       #   bash -c "mysqladmin ping -h 127.0.0.1 -u root -p'T4*7{6%i4d4AR1&'"
       # interval: 10s
       # timeout: 5s
       # retries: 5
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 
   wordpress:
